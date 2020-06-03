@@ -71,10 +71,7 @@ function swap_sorter(type){
         sorter.done = true;
         randomize_heights();
     }
-    sorter.done = false;
-    if(sorter.type() == type){
-        sorter.sort();
-    } else if(type == "bubble"){
+    if(type == "bubble"){
         sorter = new BubbleSort()
         sorter.sort();
     }
