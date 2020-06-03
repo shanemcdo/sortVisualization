@@ -1,16 +1,14 @@
 var item_heights = [];
 var size_slider = document.getElementById("size_slider");
 var speed_slider = document.getElementById("speed_slider");
-var sorter = null;
+var sorter = new BubbleSort();
 
 size_slider.oninput = function(){
     set_number_of_items(this.value);
 }
 
 speed_slider.oninput = function(){
-    if(sorter != null){
-        sorter.speed = 1000 - this.value
-    }
+    sorter.speed = 1000 - this.value
 }
 
 function randomize_heights(){
@@ -22,9 +20,7 @@ function randomize_heights(){
         item.style.height = random_num + "%"
     }
     reset_coloring();
-    if(sorter != null){
-        sorter.done = true;
-    }
+    sorter.done = true;
 }
 
 function update_heights(){
@@ -71,16 +67,14 @@ function reset_coloring(){
 }
 
 function swap_sorter(type){
-    if(sorter != null){
-        if(!sorter.done){
-            sorter.done = true;
-            randomize_heights();
-        }
-        if(sorter.type() == type){
-            sorter.sort();
-        }
+    if(!sorter.done){
+        sorter.done = true;
+        randomize_heights();
     }
-    if(type == "bubble"){
+    sorter.done = false;
+    if(sorter.type() == type){
+        sorter.sort();
+    } else if(type == "bubble"){
         sorter = new BubbleSort()
         sorter.sort();
     }
