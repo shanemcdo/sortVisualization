@@ -27,8 +27,8 @@ class BubbleSort {
     highlight() {
         reset_coloring();
         var elements = document.getElementsByClassName("inner_item");
-        elements[this.j].style.background = "green";
-        elements[this.j - 1].style.background = "green";
+        elements[this.j].style.background = "red";
+        elements[this.j - 1].style.background = "red";
     }
 
     sort(){
