@@ -23,8 +23,5 @@ body {
 }
 
 .inner_item {
-    display: inline-block;
-    width: 100%;
-    height: 50%;
     background: blue;
 }
