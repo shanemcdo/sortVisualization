@@ -1,6 +1,9 @@
 var item_heights = [];
 var slider = document.getElementById("slider");
-slider.addEventListener("input", ()=>{set_number_of_items(slider.value)});
+
+slider.oninput = function(){
+    set_number_of_items(this.value);
+}
 
 function randomize_heights(){
     var elements = document.getElementsByClassName("inner_item");
