@@ -3,6 +3,7 @@ class BubbleSort {
         this.i = 0;
         this.j = 1;
         this.done = false;
+        this.speed = 250;
     }
 
     step() {
@@ -16,7 +17,6 @@ class BubbleSort {
             this.j = 1;
             this.i += 1;
             if(this.i >= item_heights.length){
-                console.log("done");
                 this.done = true;
             }
         }
@@ -29,5 +29,14 @@ class BubbleSort {
         var elements = document.getElementsByClassName("inner_item");
         elements[this.j].style.background = "green";
         elements[this.j - 1].style.background = "green";
+    }
+
+    sort(){
+        if(this.done){
+            reset_coloring();
+            return;
+        }
+        this.step();
+        setTimeout(()=>{this.sort()}, this.speed);
     }
 }
