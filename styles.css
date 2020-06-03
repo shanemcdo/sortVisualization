@@ -13,11 +13,14 @@ nav ul {
     display: flex;
     justify-content: space-around;
     margin: 0;
-    padding: 3vh;
+    padding: 0vh;
 }
 
 nav ul li {
-    display: inline;
+    display: table-cell;
+    list-style: none;
+    vertical-align: center;
+    padding: 1vh;
 }
 
 nav ul li p {
@@ -32,7 +35,7 @@ nav ul li p {
     user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
-nav ul li p:hover {
+.clickable:hover {
     color: lightgray;
     cursor: pointer;
 }
