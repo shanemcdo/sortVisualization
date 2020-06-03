@@ -49,6 +49,14 @@ function set_number_of_items(num){
         len += 1;
     }
     randomize_heights();
+    reset_coloring();
+}
+
+function reset_coloring(){
+    var elements = document.getElementsByClassName("inner_item");
+    for(item of elements){
+        item.style.background = "blue";
+    }
 }
 
 set_number_of_items(10);
