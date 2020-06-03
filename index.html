@@ -7,11 +7,17 @@
     <body>
         <nav>
             <ul>
-                <li><p class="clickable" onclick="randomize_heights()" >Randomize</p></li>
                 <li>
-                    <p>Number of items</p>
-                    <div class="slider_container">
-                        <input type="range" min="1" max="100" value="10" id="slider">
+                    <div class="nav_item_wrapper">
+                        <p class="clickable" onclick="randomize_heights()" >Randomize</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="nav_item_wrapper">
+                        <div class="slider_container">
+                            <p>Number of items</p>
+                            <input type="range" min="1" max="100" value="10" id="slider">
+                        </div>
                     </div>
                 </li>
             </ul>
