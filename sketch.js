@@ -6,4 +6,15 @@ function randomize_heights(){
     }
 }
 
-randomize();
+function create_new_item(){
+    var container = document.getElementById("container");
+    var item = document.createElement("div");
+    item.className = "item"
+    var inner_item = document.createElement("div");
+    inner_item.className = "inner_item"
+    inner_item.innerHTML = "4";
+    item.appendChild(inner_item);
+    container.appendChild(item);
+}
+
+randomize_heights();
