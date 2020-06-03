@@ -17,4 +17,10 @@ function create_new_item(){
     container.appendChild(item);
 }
 
+function remove_item(){
+    var container = document.getElementById("container");
+    var elements = document.getElementsByClassName("item");
+    elements[elements.length - 1].remove();
+}
+
 randomize_heights();
