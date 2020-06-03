@@ -4,7 +4,7 @@ function randomize_heights(){
     var elements = document.getElementsByClassName("inner_item");
     item_heights = [];
     for (item of elements) {
-        random_num = Math.floor(Math.random() * 96) + 4
+        random_num = Math.floor(Math.random() * 99) + 1;
         item_heights.push(random_num);
         item.style.height = random_num + "%"
     }
