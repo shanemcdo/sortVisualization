@@ -1,9 +1,16 @@
 var item_heights = [];
-var slider = document.getElementById("slider");
+var size_slider = document.getElementById("size_slider");
+var speed_slider = document.getElementById("speed_slider");
 var sorter = null;
 
-slider.oninput = function(){
+size_slider.oninput = function(){
     set_number_of_items(this.value);
+}
+
+speed_slider.oninput = function(){
+    if(sorter != null){
+        sorter.speed = 1000 - this.value
+    }
 }
 
 function randomize_heights(){

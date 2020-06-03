@@ -3,7 +3,7 @@ class BubbleSort {
         this.i = 0;
         this.j = 1;
         this.done = false;
-        this.speed = 250;
+        this.speed = 1000 - speed_slider.value;
     }
 
     step() {
