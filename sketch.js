@@ -1,8 +1,19 @@
+var item_heights = [];
+
 function randomize_heights(){
     var elements = document.getElementsByClassName("inner_item");
+    item_heights = [];
     for (item of elements) {
         random_num = Math.floor(Math.random() * 96) + 4
+        item_heights.push(random_num);
         item.style.height = random_num + "%"
+    }
+}
+
+function update_heights(){
+    var elements = document.getElementsByClassName("inner_item");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.height = item_heights[i] + "%"
     }
 }
 
