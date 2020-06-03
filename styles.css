@@ -13,6 +13,8 @@ nav ul {
     display: flex;
     justify-content: space-around;
     margin: 0;
+    /* margin-left: 15%; */
+    /* margin-right: 15%; */
     padding: 0vh;
 }
 
