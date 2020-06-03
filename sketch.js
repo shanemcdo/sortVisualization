@@ -1,5 +1,6 @@
 var item_heights = [];
 var slider = document.getElementById("slider");
+var sorter = null;
 
 slider.oninput = function(){
     set_number_of_items(this.value);
@@ -14,6 +15,9 @@ function randomize_heights(){
         item.style.height = random_num + "%"
     }
     reset_coloring();
+    if(sorter != null){
+        sorter.done = true;
+    }
 }
 
 function update_heights(){
@@ -56,6 +60,22 @@ function reset_coloring(){
     var elements = document.getElementsByClassName("inner_item");
     for(item of elements){
         item.style.background = "blue";
+    }
+}
+
+function swap_sorter(type){
+    if(sorter != null){
+        if(!sorter.done){
+            sorter.done = true;
+            randomize_heights();
+        }
+        if(sorter.type() == type){
+            sorter.sort();
+        }
+    }
+    if(type == "bubble"){
+        sorter = new BubbleSort()
+        sorter.sort();
     }
 }
 

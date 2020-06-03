@@ -39,4 +39,8 @@ class BubbleSort {
         this.step();
         setTimeout(()=>{this.sort()}, this.speed);
     }
+
+    type(){
+        return "bubble";
+    }
 }
