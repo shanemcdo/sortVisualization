@@ -13,6 +13,7 @@ function randomize_heights(){
         item_heights.push(random_num);
         item.style.height = random_num + "%"
     }
+    reset_coloring();
 }
 
 function update_heights(){
@@ -49,7 +50,6 @@ function set_number_of_items(num){
         len += 1;
     }
     randomize_heights();
-    reset_coloring();
 }
 
 function reset_coloring(){
