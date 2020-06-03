@@ -35,4 +35,4 @@ function set_number_of_items(num){
     randomize_heights();
 }
 
-randomize_heights();
+set_number_of_items(10);
