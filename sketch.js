@@ -18,9 +18,22 @@ function create_new_item(){
 }
 
 function remove_item(){
-    var container = document.getElementById("container");
     var elements = document.getElementsByClassName("item");
     elements[elements.length - 1].remove();
+}
+
+function set_number_of_items(num){
+    var elements = document.getElementsByClassName("item");
+    var len = elements.length;
+    while(num < len){
+        remove_item();
+        len -= 1;
+    }
+    while(num > len){
+        create_new_item();
+        len += 1;
+    }
+    randomize_heights();
 }
 
 randomize_heights();
