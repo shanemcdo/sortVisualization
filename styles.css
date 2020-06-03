@@ -21,7 +21,7 @@ nav ul {
 nav ul li {
     display: inline;
     vertical-align: center;
-    /* padding: 1vh; */
+    padding: 5px;
 }
 
 nav ul li p {
