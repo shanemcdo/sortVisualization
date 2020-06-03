@@ -10,8 +10,7 @@ body {
     display: table;
     height 50vh;
     width: 100%;
-    background: red;
-    border-spacing: 10px;
+    border-spacing: 5px;
 }
 
 .item {
