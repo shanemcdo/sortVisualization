@@ -31,13 +31,12 @@ class BubbleSort {
         elements[this.j - 1].style.background = "red";
     }
 
-    sort(){
-        if(this.done){
-            reset_coloring();
-            return;
+    async sort(){
+        while(!this.done){
+            this.step();
+            await sleep(this.speed);
         }
-        this.step();
-        setTimeout(()=>{this.sort()}, this.speed);
+        
     }
 
     type(){

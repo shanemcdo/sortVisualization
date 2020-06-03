@@ -77,4 +77,7 @@ function swap_sorter(type){
     }
 }
 
+function sleep(milliseconds){
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
 set_number_of_items(10);
