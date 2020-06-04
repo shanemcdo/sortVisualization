@@ -7,7 +7,6 @@ class QuickSort {
     async sort(low, high){
         if(low >= high || this.done){
             update_heights();
-            reset_coloring();
             return;
         }
         var index = await this.partition(low, high);
@@ -31,6 +30,7 @@ class QuickSort {
             this.highlight(low, high, i, pivot_index);
             update_heights();
             await sleep(this.speed);
+            this.unhighlight(low, high, i, pivot_index)
         }
         var temp = item_heights[high];
         item_heights[high] = item_heights[pivot_index];
@@ -39,12 +39,20 @@ class QuickSort {
     }
 
     highlight(low, high, i, index){
-        reset_coloring();
         var elements = document.getElementsByClassName("inner_item");
         for(var j = low; j < high; j++){
             elements[j].style.background = "cyan";
         }
         elements[i].style.background = "red";
         elements[index].style.background = "green";
+    }
+
+    unhighlight(low, high, i, index){
+        var elements = document.getElementsByClassName("inner_item");
+        for(var j = low; j < high; j++){
+            elements[j].style.background = "blue";
+        }
+        elements[i].style.background = "blue";
+        elements[index].style.background = "blue";
     }
 }
