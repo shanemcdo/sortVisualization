@@ -36,6 +36,7 @@ class BubbleSort {
             this.step();
             await sleep(this.speed);
         }
+        this.done = false;
         reset_coloring();
         
     }
