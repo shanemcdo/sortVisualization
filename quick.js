@@ -19,8 +19,6 @@ class QuickSort {
         var pivot = item_heights[high]
         var pivot_index = low;
         for(var i = low; i < high; i++){
-            update_heights();
-            await sleep(this.speed);
             if (item_heights[i] < pivot){
                 var temp = item_heights[i];
                 item_heights[i] = item_heights[pivot_index];
@@ -28,6 +26,8 @@ class QuickSort {
                 pivot_index++;
             }
             this.highlight(low, high, i, pivot_index);
+            update_heights();
+            await sleep(this.speed);
         }
         var temp = item_heights[high];
         item_heights[high] = item_heights[pivot_index];
@@ -38,8 +38,8 @@ class QuickSort {
     highlight(low, high, i, index){
         reset_coloring();
         var elements = document.getElementsByClassName("inner_item");
-        for(var i = low; i < high; i++){
-            elements[i].style.background = "cyan";
+        for(var j = low; j < high; j++){
+            elements[j].style.background = "cyan";
         }
         elements[i].style.background = "red";
         elements[index].style.background = "green";
