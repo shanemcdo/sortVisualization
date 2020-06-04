@@ -18,6 +18,9 @@ class MergeSort {
         const left = item_heights.slice(low, mid);
         const right = item_heights.slice(mid, high);
         for (let l = 0, r = 0, i = low; i < high; i++) {
+            if(this.done){
+                return;
+            }
             if (l >= left.length) {
                 item_heights[i] = right[r++];
             } else if (r >= right.length) {
