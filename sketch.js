@@ -72,8 +72,11 @@ function swap_sorter(type){
         randomize_heights();
     }
     if(type == "bubble"){
-        sorter = new BubbleSort()
+        sorter = new BubbleSort();
         sorter.sort();
+    } else if(type == "quick"){
+        sorter = new QuickSort();
+        sorter.sort(0, item_heights.length - 1);
     }
 }
 
