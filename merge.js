@@ -4,36 +4,41 @@ class MergeSort {
         this.done = false;
     }
 
-    async merge_sort(arr){
-        if(arr.length == 1){
-            return arr
+    async sort(low = 0, high = item_heights.length){
+        if (high - low > 1) {
+            const mid = Math.floor((low + high) / 2);
+            await this.sort(low, mid);
+            await this.sort(mid, high);
+            await this.merge(low, mid, high);
         }
-        var mid= Math.floor(arr.length / 2);
-        var l1 = await this.merge_sort(arr.slice(0, mid));
-        var l2 = await this.merge_sort(arr.slice(mid, arr.length));
-        return this.merge(l1, l2);
+        reset_coloring();
     }
 
-    async sort(){
-        item_heights = await this.merge_sort(item_heights);
-        update_heights();
-    }
-
-    merge(l1, l2){
-        var new_list = [];
-        while(l1.length > 0 || l2.length > 0){
-            if(l1.length != 0 && l2.length != 0){
-                if(l1[0] > l2[0]){
-                    new_list.push(l2.shift());
-                } else {
-                    new_list.push(l1.shift());
-                }
-            } else if(l1.length == 0){
-                new_list.push(l2.shift());
+    async merge(low, mid, high){
+        const left = item_heights.slice(low, mid);
+        const right = item_heights.slice(mid, high);
+        for (let l = 0, r = 0, i = low; i < high; i++) {
+            if (l >= left.length) {
+                item_heights[i] = right[r++];
+            } else if (r >= right.length) {
+                item_heights[i] = left[l++];
+            } else if (left[l] < right[r]) {
+                item_heights[i] = left[l++];
             } else {
-                new_list.push(l1.shift());
+                item_heights[i] = right[r++];
             }
+            this.highlight(low, high, i);
+            update_heights();
+            await sleep(this.speed);
         }
-        return new_list;
+    }
+
+    highlight(low, high, i){
+        reset_coloring();
+        var elements = document.getElementsByClassName("inner_item");
+        for(var j = low; j < high; j++){
+            elements[j].style.background = "cyan"
+        }
+        elements[i].style.background = "red"
     }
 }
