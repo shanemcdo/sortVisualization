@@ -68,7 +68,6 @@ function reset_coloring(){
 
 function swap_sorter(type){
     if(!sorter.done){
-        sorter.done = true;
         randomize_heights();
     }
     if(type == "bubble"){
@@ -77,6 +76,9 @@ function swap_sorter(type){
     } else if(type == "quick"){
         sorter = new QuickSort();
         sorter.sort(0, item_heights.length - 1);
+    } else if(type == "merge"){
+        sorter = new MergeSort();
+        sorter.sort();
     }
 }
 
