@@ -39,8 +39,4 @@ class BubbleSort {
         reset_coloring();
         
     }
-
-    type(){
-        return "bubble";
-    }
 }
