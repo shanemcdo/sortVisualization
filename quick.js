@@ -5,7 +5,7 @@ class QuickSort {
     }
 
     async sort(low, high){
-        if(low >= high){
+        if(low >= high || this.done){
             update_heights();
             reset_coloring();
             return;
@@ -19,6 +19,9 @@ class QuickSort {
         var pivot = item_heights[high]
         var pivot_index = low;
         for(var i = low; i < high; i++){
+            if(this.done){
+                return
+            }
             if (item_heights[i] < pivot){
                 var temp = item_heights[i];
                 item_heights[i] = item_heights[pivot_index];
