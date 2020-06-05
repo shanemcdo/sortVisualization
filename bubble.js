@@ -1,7 +1,5 @@
 class BubbleSort {
     constructor() {
-        this.i = 0;
-        this.j = 1;
         this.cancel = false;
         this.speed = 1000 - speed_slider.value;
     }
