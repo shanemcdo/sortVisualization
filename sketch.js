@@ -20,7 +20,7 @@ function randomize_heights(){
         item.style.height = random_num + "%"
     }
     reset_coloring();
-    sorter.done = true;
+    sorter.cancel = true;
 }
 
 function update_heights(){
@@ -67,7 +67,7 @@ function reset_coloring(){
 }
 
 function swap_sorter(type){
-    if(!sorter.done){
+    if(!sorter.cancel){
         randomize_heights();
     }
     if(type == "bubble"){

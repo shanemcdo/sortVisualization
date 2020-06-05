@@ -1,11 +1,11 @@
 class QuickSort {
     constructor() {
         this.speed = 1000 - speed_slider.value
-        this.done = false;
+        this.cancel = false;
     }
 
     async sort(low, high){
-        if(low >= high || this.done){
+        if(low >= high || this.cancel){
             update_heights();
             return;
         }
@@ -18,7 +18,7 @@ class QuickSort {
         var pivot = item_heights[high]
         var pivot_index = low;
         for(var i = low; i < high; i++){
-            if(this.done){
+            if(this.cancel){
                 return
             }
             if (item_heights[i] < pivot){

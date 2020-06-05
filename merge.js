@@ -1,7 +1,7 @@
 class MergeSort {
     constructor() {
         this.speed = 1000 - speed_slider.value;
-        this.done = false;
+        this.cancel = false;
     }
 
     async sort(low = 0, high = item_heights.length){
@@ -18,7 +18,7 @@ class MergeSort {
         const left = item_heights.slice(low, mid);
         const right = item_heights.slice(mid, high);
         for (let l = 0, r = 0, i = low; i < high; i++) {
-            if(this.done){
+            if(this.cancel){
                 return;
             }
             if (l >= left.length) {

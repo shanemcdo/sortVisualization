@@ -2,7 +2,7 @@ class BubbleSort {
     constructor() {
         this.i = 0;
         this.j = 1;
-        this.done = false;
+        this.cancel = false;
         this.speed = 1000 - speed_slider.value;
     }
 
@@ -16,7 +16,7 @@ class BubbleSort {
     async sort(){
         for(let i = 0; i < item_heights.length; i++){
             for(let j = 1; j < item_heights.length - i; j++){
-                if(this.done){
+                if(this.cancel){
                     return;
                 }
                 if(item_heights[j - 1] > item_heights[j]){
@@ -29,7 +29,6 @@ class BubbleSort {
                 await sleep(this.speed);
             }
         }
-        this.done = false;
         reset_coloring();
     }
 }
