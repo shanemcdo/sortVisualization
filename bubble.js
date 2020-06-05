@@ -5,6 +5,7 @@ class BubbleSort {
     }
 
     highlight(j) {
+        // color the two inputs being compared
         reset_coloring();
         var elements = document.getElementsByClassName("inner_item");
         elements[j].style.background = "red";
@@ -12,6 +13,7 @@ class BubbleSort {
     }
 
     async sort(){
+        // perform bubble sort
         for(let i = 0; i < item_heights.length; i++){
             for(let j = 1; j < item_heights.length - i; j++){
                 if(this.cancel){

@@ -12,6 +12,7 @@ speed_slider.oninput = function(){
 }
 
 function randomize_heights(){
+    // randomize the heights
     var elements = document.getElementsByClassName("inner_item");
     item_heights = [];
     for (item of elements) {
@@ -24,6 +25,7 @@ function randomize_heights(){
 }
 
 function update_heights(){
+    // set heights equal to item_heights
     var elements = document.getElementsByClassName("inner_item");
     for (var i = 0; i < elements.length; i++) {
         elements[i].style.height = item_heights[i] + "%"
@@ -31,6 +33,7 @@ function update_heights(){
 }
 
 function create_new_item(){
+    // create new item
     var container = document.getElementById("container");
     var item = document.createElement("div");
     item.className = "item"
@@ -41,11 +44,13 @@ function create_new_item(){
 }
 
 function remove_item(){
+    // remove the last item in the array
     var elements = document.getElementsByClassName("item");
     elements[elements.length - 1].remove();
 }
 
 function set_number_of_items(num){
+    // use create_new_item and remove_item to set the number of items to a set number
     var elements = document.getElementsByClassName("item");
     var len = elements.length;
     while(num < len){
@@ -60,6 +65,7 @@ function set_number_of_items(num){
 }
 
 function reset_coloring(){
+    // rest the coloring of all of the items back to blue
     var elements = document.getElementsByClassName("inner_item");
     for(item of elements){
         item.style.background = "blue";
@@ -67,6 +73,8 @@ function reset_coloring(){
 }
 
 function swap_sorter(type){
+    // set the sorter based on the string input
+    // TODO: refactor
     if(!sorter.cancel){
         randomize_heights();
     }
@@ -83,6 +91,8 @@ function swap_sorter(type){
 }
 
 function sleep(milliseconds){
+    // sleep for inputed number of milliseconds
     return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
+
 set_number_of_items(10);

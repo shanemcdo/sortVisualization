@@ -5,6 +5,7 @@ class MergeSort {
     }
 
     async sort(low = 0, high = item_heights.length){
+        // perform merge sort
         if (high - low > 1) {
             const mid = Math.floor((low + high) / 2);
             await this.sort(low, mid);
@@ -15,6 +16,7 @@ class MergeSort {
     }
 
     async merge(low, mid, high){
+        // merge two sections
         const left = item_heights.slice(low, mid);
         const right = item_heights.slice(mid, high);
         for (let l = 0, r = 0, i = low; i < high; i++) {
@@ -37,6 +39,7 @@ class MergeSort {
     }
 
     highlight(low, high, i){
+        // highlight the selected sections
         reset_coloring();
         var elements = document.getElementsByClassName("inner_item");
         for(var j = low; j < high; j++){

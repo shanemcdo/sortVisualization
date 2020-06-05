@@ -5,6 +5,7 @@ class QuickSort {
     }
 
     async sort(low, high){
+        // perform quick sort
         if(low >= high || this.cancel){
             update_heights();
             return;
@@ -15,6 +16,7 @@ class QuickSort {
     }
 
     async partition(low, high){
+        // seperate into two seperate lists
         var pivot = item_heights[high]
         var pivot_index = low;
         for(var i = low; i < high; i++){
@@ -39,6 +41,7 @@ class QuickSort {
     }
 
     highlight(low, high, i, index){
+        // highlight selected portions
         var elements = document.getElementsByClassName("inner_item");
         for(var j = low; j < high; j++){
             elements[j].style.background = "cyan";
@@ -48,6 +51,7 @@ class QuickSort {
     }
 
     unhighlight(low, high, i, index){
+        // unhighlight selected portions
         var elements = document.getElementsByClassName("inner_item");
         for(var j = low; j < high; j++){
             elements[j].style.background = "blue";
