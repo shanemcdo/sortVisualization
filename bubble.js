@@ -24,20 +24,30 @@ class BubbleSort {
         this.highlight();
     }
 
-    highlight() {
+    highlight(j) {
         reset_coloring();
         var elements = document.getElementsByClassName("inner_item");
-        elements[this.j].style.background = "red";
-        elements[this.j - 1].style.background = "red";
+        elements[j].style.background = "red";
+        elements[j - 1].style.background = "red";
     }
 
     async sort(){
-        while(!this.done){
-            this.step();
-            await sleep(this.speed);
+        for(let i = 0; i < item_heights.length; i++){
+            for(let j = 1; j < item_heights.length - i; j++){
+                if(this.done){
+                    return;
+                }
+                if(item_heights[j - 1] > item_heights[j]){
+                    var temp = item_heights[j - 1];
+                    item_heights[j - 1] = item_heights[j];
+                    item_heights[j] = temp;
+                }
+                update_heights();
+                this.highlight(j);
+                await sleep(this.speed);
+            }
         }
         this.done = false;
         reset_coloring();
-        
     }
 }
