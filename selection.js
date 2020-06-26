@@ -35,6 +35,7 @@ class SelectionSort {
             update_heights(0, 0, i);
             await sleep(this.speed);
         }
+        reset_coloring();
     }
     
 }
