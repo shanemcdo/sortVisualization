@@ -87,6 +87,9 @@ function swap_sorter(type){
     } else if(type == "merge"){
         sorter = new MergeSort();
         sorter.sort();
+    } else if(type == "selection"){
+        sorter = new SelectionSort();
+        sorter.sort();
     }
 }
 
