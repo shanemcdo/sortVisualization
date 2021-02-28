@@ -74,6 +74,7 @@ nav ul li p {
     text-align: center;
     background: white;
     vertical-align: bottom;
+    height: 100%;
 }
 
 .inner_item {
