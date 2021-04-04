@@ -43,8 +43,8 @@ class MergeSort {
         reset_coloring();
         var elements = document.getElementsByClassName("inner_item");
         for(var j = low; j < high; j++){
-            elements[j].style.background = "cyan"
+            elements[j].style.background = colors.FOCUSED
         }
-        elements[i].style.background = "red"
+        elements[i].style.background = colors.SELECTED
     }
 }

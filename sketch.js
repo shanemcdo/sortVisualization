@@ -68,7 +68,7 @@ function reset_coloring(){
     // rest the coloring of all of the items back to blue
     var elements = document.getElementsByClassName("inner_item");
     for(item of elements){
-        item.style.background = "blue";
+        item.style.background = colors.NORMAL;
     }
 }
 

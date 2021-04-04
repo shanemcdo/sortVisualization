@@ -8,10 +8,10 @@ class SelectionSort {
     highlight(j, min_index, sorted_to) {
         reset_coloring();
         var elements = document.getElementsByClassName("inner_item");
-        elements[min_index].style.background = "green";
-        elements[j].style.background = "red";
+        elements[min_index].style.background = colors.SELECTED2;
+        elements[j].style.background = colors.SELECTED;
         for(let i = 0; i < sorted_to; i++){
-            elements[i].style.background = "cyan";
+            elements[i].style.background = colors.FOCUSED;
         }
     }
 

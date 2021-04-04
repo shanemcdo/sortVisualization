@@ -8,8 +8,8 @@ class BubbleSort {
         // color the two inputs being compared
         reset_coloring();
         var elements = document.getElementsByClassName("inner_item");
-        elements[j].style.background = "red";
-        elements[j - 1].style.background = "red";
+        elements[j].style.background = colors.SELECTED;
+        elements[j - 1].style.background = colors.SELECTED;
     }
 
     async sort(){

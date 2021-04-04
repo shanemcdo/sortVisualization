@@ -44,19 +44,19 @@ class QuickSort {
         // highlight selected portions
         var elements = document.getElementsByClassName("inner_item");
         for(var j = low; j < high; j++){
-            elements[j].style.background = "cyan";
+            elements[j].style.background = colors.FOCUSED;
         }
-        elements[i].style.background = "red";
-        elements[index].style.background = "green";
+        elements[i].style.background = colors.SELECTED;
+        elements[index].style.background = colors.SELECTED2;
     }
 
     unhighlight(low, high, i, index){
         // unhighlight selected portions
         var elements = document.getElementsByClassName("inner_item");
         for(var j = low; j < high; j++){
-            elements[j].style.background = "blue";
+            elements[j].style.background = colors.NORMAL;
         }
-        elements[i].style.background = "blue";
-        elements[index].style.background = "blue";
+        elements[i].style.background = colors.NORMAL;
+        elements[index].style.background = colors.NORMAL;
     }
 }
