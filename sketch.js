@@ -90,6 +90,9 @@ function swap_sorter(type){
     } else if(type == "selection"){
         sorter = new SelectionSort();
         sorter.sort();
+    } else if(type == "insertion"){
+        sorter = new InsertionSort();
+        sorter.sort();
     }
 }
 
