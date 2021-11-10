@@ -23,6 +23,8 @@ class RadixSort {
         for(let i = 0; i < highest_power; i++){
             let divisor = this.base ** i // the power of the current base
             let mod = this.base ** (i + 1) // one more than the power of the current base
+            if(this.cancel)
+                return
             for(let height of item_heights)
                 buckets[Math.floor(height % mod / divisor)].push(height);
             let idx = 0;

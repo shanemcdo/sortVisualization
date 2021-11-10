@@ -16,6 +16,8 @@ class InsertionSort {
     async sort() {
         for(let i = 1; i < item_heights.length; i++){
             for(let j = i; j > 0; j--){
+                if(this.cancel)
+                    return
                 if(item_heights[j] < item_heights[j - 1]){
                     let temp = item_heights[j - 1];
                     item_heights[j - 1] = item_heights[j];
