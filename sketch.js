@@ -1,4 +1,4 @@
-    let inner_items = document.getElementsByClassName("inner_item");
+let inner_items = document.getElementsByClassName("inner_item");
 let item_heights = [];
 let size_slider = document.getElementById("size_slider");
 let speed_slider = document.getElementById("speed_slider");
