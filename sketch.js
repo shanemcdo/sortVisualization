@@ -93,6 +93,9 @@ function swap_sorter(type){
     } else if(type == "insertion"){
         sorter = new InsertionSort();
         sorter.sort();
+    } else if(type == "radix"){
+        sorter = new RadixSort();
+        sorter.sort();
     }
 }
 
