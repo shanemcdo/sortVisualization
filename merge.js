@@ -41,10 +41,9 @@ class MergeSort {
     highlight(low, high, i){
         // highlight the selected sections
         reset_coloring();
-        var elements = document.getElementsByClassName("inner_item");
-        for(var j = low; j < high; j++){
-            elements[j].style.background = colors.FOCUSED
+        for(let j = low; j < high; j++){
+            inner_items[j].style.background = colors.FOCUSED
         }
-        elements[i].style.background = colors.SELECTED
+        inner_items[i].style.background = colors.SELECTED
     }
 }

@@ -7,9 +7,8 @@ class BubbleSort {
     highlight(j) {
         // color the two inputs being compared
         reset_coloring();
-        var elements = document.getElementsByClassName("inner_item");
-        elements[j].style.background = colors.SELECTED;
-        elements[j - 1].style.background = colors.SELECTED;
+        inner_items[j].style.background = colors.SELECTED;
+        inner_items[j - 1].style.background = colors.SELECTED;
     }
 
     async sort(){
@@ -20,7 +19,7 @@ class BubbleSort {
                     return;
                 }
                 if(item_heights[j - 1] > item_heights[j]){
-                    var temp = item_heights[j - 1];
+                    let temp = item_heights[j - 1];
                     item_heights[j - 1] = item_heights[j];
                     item_heights[j] = temp;
                 }

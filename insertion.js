@@ -7,11 +7,10 @@ class InsertionSort {
     highlight(j){
         // color the two inputs being compared
         reset_coloring();
-        var elements = document.getElementsByClassName("inner_item");
         for(let i = 0; i < j-1; i++)
-            elements[i].style.background = colors.FOCUSED;
-        elements[j].style.background = colors.SELECTED;
-        elements[j - 1].style.background = colors.SELECTED;
+            inner_items[i].style.background = colors.FOCUSED;
+        inner_items[j].style.background = colors.SELECTED;
+        inner_items[j - 1].style.background = colors.SELECTED;
     }
 
     async sort() {

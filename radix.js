@@ -10,9 +10,8 @@ class RadixSort {
     }
 
     highlight(mod, divisor){
-        var elements = document.getElementsByClassName("inner_item");
-        for(let i = 0; i < elements.length; i++)
-            elements[i].style.background = `hsl(${Math.floor(item_heights[i] % mod / divisor) * 360 / this.base}, 100%, 50%)`;
+        for(let i = 0; i < inner_items.length; i++)
+            inner_items[i].style.background = `hsl(${Math.floor(item_heights[i] % mod / divisor) * 360 / this.base}, 100%, 50%)`;
     }
 
     async sort(){

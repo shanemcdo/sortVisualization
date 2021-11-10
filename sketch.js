@@ -1,7 +1,8 @@
-var item_heights = [];
-var size_slider = document.getElementById("size_slider");
-var speed_slider = document.getElementById("speed_slider");
-var sorter = new BubbleSort();
+    let inner_items = document.getElementsByClassName("inner_item");
+let item_heights = [];
+let size_slider = document.getElementById("size_slider");
+let speed_slider = document.getElementById("speed_slider");
+let sorter = new BubbleSort();
 
 size_slider.oninput = function(){
     set_number_of_items(this.value);
@@ -13,9 +14,8 @@ speed_slider.oninput = function(){
 
 function randomize_heights(){
     // randomize the heights
-    var elements = document.getElementsByClassName("inner_item");
     item_heights = [];
-    for (item of elements) {
+    for (item of inner_items) {
         random_num = Math.floor(Math.random() * 99) + 1;
         item_heights.push(random_num);
         item.style.height = random_num + "%"
@@ -26,18 +26,17 @@ function randomize_heights(){
 
 function update_heights(){
     // set heights equal to item_heights
-    var elements = document.getElementsByClassName("inner_item");
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].style.height = item_heights[i] + "%"
+    for (let i = 0; i < inner_items.length; i++) {
+        inner_items[i].style.height = item_heights[i] + "%"
     }
 }
 
 function create_new_item(){
     // create new item
-    var container = document.getElementById("container");
-    var item = document.createElement("div");
+    let container = document.getElementById("container");
+    let item = document.createElement("div");
     item.className = "item"
-    var inner_item = document.createElement("div");
+    let inner_item = document.createElement("div");
     inner_item.className = "inner_item"
     item.appendChild(inner_item);
     container.appendChild(item);
@@ -45,14 +44,14 @@ function create_new_item(){
 
 function remove_item(){
     // remove the last item in the array
-    var elements = document.getElementsByClassName("item");
-    elements[elements.length - 1].remove();
+    let items = document.getElementsByClassName("item");
+    items[items.length - 1].remove();
 }
 
 function set_number_of_items(num){
     // use create_new_item and remove_item to set the number of items to a set number
-    var elements = document.getElementsByClassName("item");
-    var len = elements.length;
+    let items = document.getElementsByClassName("item");
+    let len = items.length;
     while(num < len){
         remove_item();
         len -= 1;
@@ -66,8 +65,7 @@ function set_number_of_items(num){
 
 function reset_coloring(){
     // rest the coloring of all of the items back to blue
-    var elements = document.getElementsByClassName("inner_item");
-    for(item of elements){
+    for(item of inner_items){
         item.style.background = colors.NORMAL;
     }
 }
